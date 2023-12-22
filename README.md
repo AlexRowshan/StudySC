@@ -1,6 +1,4 @@
-# StudySC
-
-Switch to "MainBranch" to view code
+# Switch to "MainBranch" to view code
 
 Deployment Instructions:
 Prerequisites:
