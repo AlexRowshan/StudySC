@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>StudySC Login</title>
+
+<script>
+		function validateEmail()
+		{
+			var email = document.getElementById('email-id').value;
+			if(email.endsWith("@usc.edu"))
+			{
+				return true;
+			}
+			else
+				alert("Email must end with @usc.edu");
+				return false;
+			
+		}
+	</script>
+
+
+<style>
+	body {
+		background-color: rgb(212, 35, 35);
+	}
+	
+    #pic1 {
+        width: 300px;
+        border-radius: 15px;
+        display: block;
+        margin: 20px auto; /* Center the image horizontally with some spacing */
+    }
+
+    #picDiv {
+        padding-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px; 
+    }
+    
+    .form-row {
+		margin: 20px 0px;
+		display: flex;
+		color: white;
+		font-size: 1.0em;
+	}
+
+	.left-column {
+		width: 100px;
+		margin-left: 60px;
+		margin-top: 15px;
+		font-family: 'Mochiy Pop P One', sans-serif;
+	}
+	
+	#SignDiv {
+		width: 400px;
+		padding-top: 20px;
+		background-color: rgb(152, 27, 29);
+		height: 250px;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 15px;
+	}
+	
+	#SubmitButton {
+		margin-top: 10px;
+		margin-left:300px;
+		height: 40px;
+		border-radius: 5px;
+		background-color:  rgb(194, 55, 45);
+		color:white;
+	}
+	
+	#submitArea {
+		padding-top: 10px;
+		margin-left: 60px;
+	}
+	
+	#submitArea a:hover {
+		color: white;
+    }
+	
+	#submitArea a {
+		color: orange;
+		font-family: 'Mochiy Pop P One', sans-serif;
+	}
+	
+	#name-id {
+		width: 160px;
+	}
+	
+	#email-id {
+		width: 160px;
+	}
+	
+</style>
+
+</head>
+<body>
+	<div id="picDiv">
+		<img id="pic1" src="USC_Logo.png" alt="USC_Logo">
+	</div>
+	
+	<form onsubmit="return validateEmail()" action="/login" method="post">
+	<div id="SignDiv">
+		<div class="form-row">
+			<div class="left-column">
+				<label for="name-id">USC Email</label>
+			</div>
+			<input type="email" id="email" placeholder="ttrojan@usc.edu" name="email" required>
+		</div> <!-- form-wor-->
+
+		<div class="form-row">
+			<div class="left-column">
+				<label for="password">Password</label></div>
+				<input type="password" id="password" placeholder="trojan1880" name="password" required>
+			</div>
+			
+			<div id="submitArea">
+				<a href="/scheduleGuest">Guest Mode</a>
+				<a>|</a>
+				<a href="/register">Sign Up</a>
+			</div>
+			
+			<button type="submit" id="SubmitButton">Sign In</button>
+	</div>
+	</form>
+	<div class="errorMessage" th:if="${errorMessage}" style="color: rgb(255, 204, 0); font-family: 'Mochiy Pop P One', sans-serif; font-size: 100%; position: absolute; left: 540px;">
+            <p th:text="${errorMessage}"></p>
+		
+	</div>  <!-- Sign Div -->
+	
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeLeaf.org">
+	
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="UserProfile.css">
+    <title>User Profile</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="/schedule">Home</a>
+        <a>User</a>
+    </div>
+
+    <table>
+        <tr>
+            <td>
+                <div id="emailDisplay">
+                    <span id="emailSpan">
+                        <h2><span th:text="${email}" id="emailValue">{{ email }}</span></h2>
+                    </span>
+                </div>
+            </td>
+            <td>
+                <div id="nameDisplay">
+                    <span id="nameSpan">
+                        <h2><span th:text="${fullname}" id = "fullName" >{{ fullname }}</span></h2>
+                    </span>
+                </div>
+            </td>
+            <td>
+                <div id="phoneDisplay">
+                    <span id="phoneSpan">XXX-XXX-XXXX</span>
+                    <button onclick="editPhone()">E</button>
+                </div>
+                <!-- Hidden form to edit phone -->
+                <div id="editPhoneForm" style="display:none;">
+                    <input type="text" id="phoneInput">
+                    <button class="save-button" onclick="savePhone()">S</button>
+                    <button class="cancel-button" onclick="cancelPhoneEdit()">C</button>
+                </div>
+            </td>
+            <td>
+                <div id="deleteAccountDisplay">
+                    <span id="deleteAccountSpan">Delete Account</span>
+                    <button onclick="deleteAccount()">X</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+		<div class="schedule-header">
+			<span>My Schedule</span>
+		    <div class="input-container">
+		        <input type="text" id="newCourseInput" placeholder="Enter course name">
+		        <button onclick="addCourse()">+</button>
+		    </div>
+	    </div>
+	     <table id="scheduleTable">
+        <tr>
+            <th>Course Name</th>
+            <th>Actions</th>
+        </tr>
+        <!-- Group rows will be added here -->
+    	</table>
+	    
+		
+
+    <div class="header">
+        <span>Study Groups</span>
+    </div>
+
+    <table id="groupsTable">
+        <tr>
+            <th>Course Name</th>
+            <th>Meeting Date</th>
+            <th>Meeting Time Start</th>
+            <th>Capacity</th>
+            <th>Location</th>
+            <th>Actions</th>
+            
+        </tr>
+        <!-- Group rows will be added here -->
+    </table>
+
+    <script type="text/javascript" src="UserProfile.js"></script>
+</body>
+
+</html>
