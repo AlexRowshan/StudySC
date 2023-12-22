@@ -1,4 +1,4 @@
-# Switch to "MainBranch" to view code
+# Switch to "mainBranch" to view code
 
 Deployment Instructions:
 Prerequisites:
