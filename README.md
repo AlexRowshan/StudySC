@@ -1,5 +1,7 @@
 # StudySC
 
+Switch to "MainBranch" to view code
+
 Deployment Instructions:
 Prerequisites:
 1. Download Java version 17
