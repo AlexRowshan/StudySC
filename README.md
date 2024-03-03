@@ -11,7 +11,7 @@ Tomcat Local Host Server Installation:
 1. Installing Apache Tomcat
 a. Mac: Install Homebrew
 b. Install Tomcat through Homebrew
-2. Link Tomcat to Eclipse (Lab 1 instructions)
+2. Link Tomcat to Eclipse 
 
 Spring Boot Installation:
 1. Go to Eclipse
